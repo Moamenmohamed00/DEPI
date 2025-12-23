@@ -67,3 +67,28 @@ order by cs.[total spend] desc
 --Intermediate result sets for complex calculations
 --Advantages: Better readability than subqueries, can be referenced multiple times, supports recursion
 --Performance: CTEs are not materialized (calculated each time referenced)
+
+
+--multi CTE
+with revenue_per_Category as(
+select c.category_id,c.category_name,sum(oi.quantity*oi.list_price*(1-oi.discount))as'total revenue'
+from sales.order_items oi join production.products p
+on oi.product_id=p.product_id join production.categories c
+on c.category_id=p.category_id
+group by c.category_id,c.category_name
+),
+avg_per_category as(
+select c.category_id,c.category_name,avg(oi.quantity*oi.list_price*(1-oi.discount))as'Avege revenue'
+from sales.order_items oi join production.products p
+on oi.product_id=p.product_id join production.categories c
+on c.category_id=p.category_id
+group by c.category_id,c.category_name
+)
+select ac.category_id,ac.[Avege revenue],tc.[total revenue],
+case
+when tc.[total revenue]>50000 then 'Excellent'
+when tc.[total revenue]>20000 then 'Good'
+else 'Needs'
+end as'combine'
+from avg_per_category ac join revenue_per_Category tc
+on ac.category_id=tc.category_id

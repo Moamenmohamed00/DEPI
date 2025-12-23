@@ -69,7 +69,7 @@ order by cs.[total spend] desc
 --Performance: CTEs are not materialized (calculated each time referenced)
 
 
---multi CTE
+--multi CTE (Common Table Expression)
 with revenue_per_Category as(
 select c.category_id,c.category_name,sum(oi.quantity*oi.list_price*(1-oi.discount))as'total revenue'
 from sales.order_items oi join production.products p
@@ -92,3 +92,4 @@ else 'Needs'
 end as'combine'
 from avg_per_category ac join revenue_per_Category tc
 on ac.category_id=tc.category_id
+

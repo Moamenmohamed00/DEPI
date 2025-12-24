@@ -68,7 +68,6 @@ order by cs.[total spend] desc
 --Advantages: Better readability than subqueries, can be referenced multiple times, supports recursion
 --Performance: CTEs are not materialized (calculated each time referenced)
 
-
 --multi CTE (Common Table Expression)
 with revenue_per_Category as(
 select c.category_id,c.category_name,sum(oi.quantity*oi.list_price*(1-oi.discount))as'total revenue'
@@ -92,4 +91,24 @@ else 'Needs'
 end as'combine'
 from avg_per_category ac join revenue_per_Category tc
 on ac.category_id=tc.category_id
+-----------------------------------------------------------------------------------------------------------------
+  --(challenge) diff between sum and count
+--why secound query print same num
+select
+    sum(case when order_status = 4 then 1 else 0 end) as completed,
+    sum(case when order_status < 4 then 1 else 0 end) as not_completed
+from sales.orders
+select--same number because count any thing not null
+    count(case when order_status = 4 then 1 else 0 end) as completed,
+    count(case when order_status < 4 then 1 else 0 end) as not_completed
+from sales.orders
+select
+    count(case when order_status = 4 then 1 else null end) as completed,
+    count(case when order_status < 4 then 1 else null end) as not_completed
+from sales.orders;
+--or
+select
+    count(case when order_status = 4 then 1 end) as completed,
+    count(case when order_status < 4 then 1 end) as not_completed
+from sales.orders;
 

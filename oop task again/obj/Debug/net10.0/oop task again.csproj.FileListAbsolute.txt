@@ -1,0 +1,14 @@
+C:\Users\mmwmn\source\repos\oop task again\oop task again\bin\Debug\net10.0\oop task again.exe
+C:\Users\mmwmn\source\repos\oop task again\oop task again\bin\Debug\net10.0\oop task again.deps.json
+C:\Users\mmwmn\source\repos\oop task again\oop task again\bin\Debug\net10.0\oop task again.runtimeconfig.json
+C:\Users\mmwmn\source\repos\oop task again\oop task again\bin\Debug\net10.0\oop task again.dll
+C:\Users\mmwmn\source\repos\oop task again\oop task again\bin\Debug\net10.0\oop task again.pdb
+C:\Users\mmwmn\source\repos\oop task again\oop task again\obj\Debug\net10.0\oop task again.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mmwmn\source\repos\oop task again\oop task again\obj\Debug\net10.0\oop task again.AssemblyInfoInputs.cache
+C:\Users\mmwmn\source\repos\oop task again\oop task again\obj\Debug\net10.0\oop task again.AssemblyInfo.cs
+C:\Users\mmwmn\source\repos\oop task again\oop task again\obj\Debug\net10.0\oop task again.csproj.CoreCompileInputs.cache
+C:\Users\mmwmn\source\repos\oop task again\oop task again\obj\Debug\net10.0\oop task again.dll
+C:\Users\mmwmn\source\repos\oop task again\oop task again\obj\Debug\net10.0\refint\oop task again.dll
+C:\Users\mmwmn\source\repos\oop task again\oop task again\obj\Debug\net10.0\oop task again.pdb
+C:\Users\mmwmn\source\repos\oop task again\oop task again\obj\Debug\net10.0\oop task again.genruntimeconfig.cache
+C:\Users\mmwmn\source\repos\oop task again\oop task again\obj\Debug\net10.0\ref\oop task again.dll

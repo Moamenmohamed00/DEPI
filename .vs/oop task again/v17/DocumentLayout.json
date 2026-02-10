@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|c:\\users\\mmwmn\\source\\repos\\oop task again\\oop task again\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|solutionrelative:oop task again\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|c:\\users\\mmwmn\\source\\repos\\oop task again\\oop task again\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|solutionrelative:oop task again\\bankaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|c:\\users\\mmwmn\\source\\repos\\oop task again\\oop task again\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|solutionrelative:oop task again\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|c:\\users\\mmwmn\\source\\repos\\oop task again\\oop task again\\currentaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|solutionrelative:oop task again\\currentaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|c:\\users\\mmwmn\\source\\repos\\oop task again\\oop task again\\savingaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|solutionrelative:oop task again\\savingaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|c:\\users\\mmwmn\\source\\repos\\oop task again\\oop task again\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|solutionrelative:oop task again\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|c:\\users\\mmwmn\\source\\repos\\oop task again\\oop task again\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{082E6D28-81A3-4B20-9A5B-E6D091DAC159}|oop task again\\oop task again.csproj|solutionrelative:oop task again\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\Transaction.cs",
+              "RelativeDocumentMoniker": "oop task again\\Transaction.cs",
+              "ToolTip": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\Transaction.cs",
+              "RelativeToolTip": "oop task again\\Transaction.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAywBUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T14:02:49.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\Customer.cs",
+              "RelativeDocumentMoniker": "oop task again\\Customer.cs",
+              "ToolTip": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\Customer.cs",
+              "RelativeToolTip": "oop task again\\Customer.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAA1wBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T13:56:38.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Bank.cs",
+              "DocumentMoniker": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\Bank.cs",
+              "RelativeDocumentMoniker": "oop task again\\Bank.cs",
+              "ToolTip": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\Bank.cs",
+              "RelativeToolTip": "oop task again\\Bank.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAswDAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T13:30:28.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CurrentAccount.cs",
+              "DocumentMoniker": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\CurrentAccount.cs",
+              "RelativeDocumentMoniker": "oop task again\\CurrentAccount.cs",
+              "ToolTip": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\CurrentAccount.cs",
+              "RelativeToolTip": "oop task again\\CurrentAccount.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAcwB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T12:29:07.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SavingAccount.cs",
+              "DocumentMoniker": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\SavingAccount.cs",
+              "RelativeDocumentMoniker": "oop task again\\SavingAccount.cs",
+              "ToolTip": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\SavingAccount.cs",
+              "RelativeToolTip": "oop task again\\SavingAccount.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA4wB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T12:28:51.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BankAccount.cs",
+              "DocumentMoniker": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\BankAccount.cs",
+              "RelativeDocumentMoniker": "oop task again\\BankAccount.cs",
+              "ToolTip": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\BankAccount.cs",
+              "RelativeToolTip": "oop task again\\BankAccount.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAzwI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:04:42.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\Program.cs",
+              "RelativeDocumentMoniker": "oop task again\\Program.cs",
+              "ToolTip": "C:\\Users\\mmwmn\\source\\repos\\oop task again\\oop task again\\Program.cs",
+              "RelativeToolTip": "oop task again\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T11:04:17.79Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

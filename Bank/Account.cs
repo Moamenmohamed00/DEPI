@@ -15,11 +15,28 @@ namespace Bank
         public DateTime DateOpened { get;  }
         public List<Transaction> Transactions { get; set; }
         LogHandler logHandler;
+        public Account(int accountNumber, decimal balance, DateTime dateOpened, List<Transaction> transactions, LogHandler logHandler)
+        {
+            AccountNumber = accountNumber;
+            Balance = balance;
+            DateOpened = dateOpened;
+            Transactions = transactions;
+            this.logHandler = logHandler;
+        }
+        public Account(int accountNumber,decimal balance)
+        {            
+            AccountNumber = accountNumber;
+            Balance = balance;
+            DateOpened = DateTime.Now;
+            Transactions = new List<Transaction>();
+        }
+
         protected Account() 
         {
             AccountNumber=++_counter;
             DateOpened=DateTime.Now;
             Balance =0;
+            Transactions = new List<Transaction>();
         }
         public void Deposit(decimal amount)
         {

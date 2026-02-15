@@ -13,6 +13,14 @@ namespace Bank
         public override string AccountType() => "Saving";
 
         public override decimal CalculateMonthly()=>Balance* InterestRate / 100/12;
+        public Saving(int accountNumber, decimal initialBalance, decimal interestRate) : base(accountNumber, initialBalance)
+        {
+            InterestRate = interestRate;
+        }
+        public Saving(decimal interestRate) : base()
+        {
+            InterestRate = interestRate;
+        }
         public override bool Withdraw(decimal amount)
         {
             if (Balance >= amount)

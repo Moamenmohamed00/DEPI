@@ -64,7 +64,7 @@ var borrowbook = LibraryData.Loans.Join(LibraryData.Books, l => l.BookId, b => b
 BookId = g.Key.bookid,Title = g.Key.title,BorrowCount = g.Count()});
 borrowbook.ToConsoleTable();
 
-var overdueBookNotReturned = LibraryData.Books.Join(LibraryData.Loans, book => book.Id, loan => loan.BookId, (b, l) => new { Tittle = b.Title, Genre = b.Genre, Avalbality = b.IsAvailable, Return = l.ReturnDate, Due = l.DueDate }).Where(l => l.Return is null);//if (l,b) will be the other way
+var overdueBookNotReturned = LibraryData.Books.Join(LibraryData.Loans, book => book.Id, loan => loan.BookId, (b, l) => new { Tittle = b.Title, Genre = b.Genre, Avalbality = b.IsAvailable, Return = l.ReturnDate, Due = l.DueDate }).Where(l => l.Return is null&& l.DueDate < DateTime.Now);//if (l,b) will be the other way
 overdueBookNotReturned.ToConsoleTable();
 /*var overdueBooks = LibraryData.Loans
     .Where(l => l.ReturnDate == null && l.DueDate < DateTime.Now)
@@ -97,3 +97,4 @@ var loanStats = LibraryData.Loans
             .Average(l => (l.ReturnDate.Value - l.LoanDate).TotalDays)
     });
 loanStats.ToConsoleTable();
+

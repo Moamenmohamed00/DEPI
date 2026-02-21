@@ -1,0 +1,14 @@
+E:\DEPI 4\LINQ\LinqAssignment\bin\Debug\net9.0\LinqAssignment.exe
+E:\DEPI 4\LINQ\LinqAssignment\bin\Debug\net9.0\LinqAssignment.deps.json
+E:\DEPI 4\LINQ\LinqAssignment\bin\Debug\net9.0\LinqAssignment.runtimeconfig.json
+E:\DEPI 4\LINQ\LinqAssignment\bin\Debug\net9.0\LinqAssignment.dll
+E:\DEPI 4\LINQ\LinqAssignment\bin\Debug\net9.0\LinqAssignment.pdb
+E:\DEPI 4\LINQ\LinqAssignment\obj\Debug\net9.0\LinqAssignment.GeneratedMSBuildEditorConfig.editorconfig
+E:\DEPI 4\LINQ\LinqAssignment\obj\Debug\net9.0\LinqAssignment.AssemblyInfoInputs.cache
+E:\DEPI 4\LINQ\LinqAssignment\obj\Debug\net9.0\LinqAssignment.AssemblyInfo.cs
+E:\DEPI 4\LINQ\LinqAssignment\obj\Debug\net9.0\LinqAssignment.csproj.CoreCompileInputs.cache
+E:\DEPI 4\LINQ\LinqAssignment\obj\Debug\net9.0\LinqAssignment.dll
+E:\DEPI 4\LINQ\LinqAssignment\obj\Debug\net9.0\refint\LinqAssignment.dll
+E:\DEPI 4\LINQ\LinqAssignment\obj\Debug\net9.0\LinqAssignment.pdb
+E:\DEPI 4\LINQ\LinqAssignment\obj\Debug\net9.0\LinqAssignment.genruntimeconfig.cache
+E:\DEPI 4\LINQ\LinqAssignment\obj\Debug\net9.0\ref\LinqAssignment.dll

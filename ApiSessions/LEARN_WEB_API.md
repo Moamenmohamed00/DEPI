@@ -13,10 +13,94 @@ Everything begins in `Program.cs`. This is where you configure services and the 
 ### Key Components:
 - **Dependency Injection (DI)**: Registering services like `AppDbContext` and `TaskService`.
 - **Swagger**: Provides a visual UI to test your endpoints (`builder.Services.AddSwaggerGen()`).
-- **Middleware**: Configuring how requests are handled (e.g., `app.UseHttpsRedirection()`, `app.UseAuthorization()`).
+- **Middleware**: Software components that sit in the HTTP pipeline — they run on every request *before* the controller and on every response *after* it.
 
 > [!TIP]
-> Notice the comments at the bottom of [Program.cs](file:///c:/Users/mmwmn/source/repos/ApiSessions/ApiSessions/Program.cs#L34-L42). They outline the core flow of building an API.
+> Notice the comments at the bottom of [Program.cs](file:///c:/Users/mmwmn/source/repos/ApiSessions/ApiSessions/Program.cs#L105-L115). They outline the core flow of building an API.
+
+### Middleware — Three Ways to Write It
+Middleware runs in the order it is added. Each component calls `next(context)` to pass control forward.
+
+#### 1. Inline (Lambda) — `app.Use()`
+The simplest approach, written directly in `Program.cs`:
+```csharp
+app.Use(async (HttpContext context, RequestDelegate next) =>
+{
+    Console.WriteLine($">>>Request: {context.Request.Method} {context.Request.Path}");
+    await next(context);  // call the next middleware / controller
+    Console.WriteLine($"<<<Response: {context.Response.StatusCode}");
+});
+```
+Other lambda variants:
+- **`app.Run()`** — terminal middleware, **no** `next` call. Ends the pipeline.
+- **`app.Map("/path", ...)`** — branches the pipeline for a specific URL.
+
+#### 2. Class-Based (Custom Class) — [CustomMiddleware.cs](file:///c:/Users/mmwmn/source/repos/ApiSessions/ApiSessions/Middleware/CustomMiddleware.cs)
+A standalone class with a `RequestDelegate _next` injected via constructor:
+```csharp
+public class CustomMiddleware
+{
+    private readonly RequestDelegate _next;
+    public CustomMiddleware(RequestDelegate next) { _next = next; }
+
+    public async Task InvokeAsync(HttpContext context)
+    {
+        Console.WriteLine(">>>Custom Middleware: Before next middleware");
+        await _next(context);
+        Console.WriteLine("<<<Custom Middleware: After next middleware");
+    }
+}
+```
+Registered with an **extension method** for clean `Program.cs` usage:
+```csharp
+public static IApplicationBuilder UseCustomMiddleware(this IApplicationBuilder builder)
+    => builder.UseMiddleware<CustomMiddleware>();
+
+// In Program.cs:
+app.UseCustomMiddleware();
+```
+
+#### 3. `IMiddleware` Interface — [TestMiddleware.cs](file:///c:/Users/mmwmn/source/repos/ApiSessions/ApiSessions/Middleware/TestMiddleware.cs)
+Implementing `IMiddleware` means the class is managed by the DI container (must be registered as a service):
+```csharp
+public class TestMiddleware : IMiddleware
+{
+    public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+    {
+        Console.WriteLine(">>>Test Middleware: Before next middleware");
+        await next(context);
+        Console.WriteLine("<<<Test Middleware: After next middleware");
+    }
+}
+```
+Registration — **two steps** required:
+```csharp
+// 1. Register as a service (because IMiddleware uses DI)
+builder.Services.AddTransient<TestMiddleware>();
+
+// 2. Add to pipeline
+app.UseTestMiddleware();
+```
+
+| Approach | Class needed | DI registration | Use when... |
+|---|---|---|---|
+| `app.Use()` inline | ✗ | ✗ | Quick logging/debugging |
+| Class-based | ✓ | ✗ | Reusable, no DI dependencies |
+| `IMiddleware` | ✓ | ✓ | Needs injected services (e.g., logger, DB) |
+
+#### The Full Request Lifecycle
+The comments in [Program.cs](file:///c:/Users/mmwmn/source/repos/ApiSessions/ApiSessions/Program.cs#L46-L65) include a real server log showing exactly what happens for `PUT /api/TaskItem/65`:
+```
+>>>Request: PUT /api/TaskItem/65          ← inline app.Use fires first
+info:  Starting update operation for id 65 ← LogInformation in controller
+info:  Executed DbCommand (47ms)           ← EF Core queries DB
+warn:  Task with id 65 not found           ← LogWarning in catch block
+fail:  NullReferenceException              ← LogError
+crit:  Critical error for task 65          ← LogCritical
+Update operation completed.                ← finally block
+<<<Response: 404                           ← inline app.Use fires on the way back
+```
+This shows the pipeline wrapping the controller like an onion — middleware fires going *in* and again coming *out*.
 
 ---
 
@@ -110,7 +194,7 @@ finally                               // always runs, even if an exception was t
 3. `Exception` (catch-all fallback)
 
 > [!NOTE]
-> The comment at line 190 in the controller explains the problem with this approach: if every action needs its own try-catch and logger calls, you are repeating yourself and violating the **Single Responsibility Principle**. The solution is a **global exception-handling middleware** that catches all unhandled exceptions in one place — the next topic to learn.
+> If every action needs its own try-catch and logger calls, you are repeating yourself and violating the **Single Responsibility Principle**. The solution is a **global exception-handling middleware** that catches all exceptions in one place. See [CustomMiddleware.cs](file:///c:/Users/mmwmn/source/repos/ApiSessions/ApiSessions/Middleware/CustomMiddleware.cs) and [TestMiddleware.cs](file:///c:/Users/mmwmn/source/repos/ApiSessions/ApiSessions/Middleware/TestMiddleware.cs) for how custom middleware is structured in this project.
 
 ---
 
@@ -183,7 +267,8 @@ builder.Services.AddSingleton<SingletonService>();
 4. **Register Services** (`Program.cs`)
 5. **Implement Logic** (`TaskService.cs`)
 6. **Expose Endpoints** (`TaskItemController.cs`)
-7. **Swap Implementations** (`FakeService` vs `TaskService` via DI)
-8. **Understand Lifetimes** (`TransientService`, `ScopedService`, `SingletonService`)
-9. **Handle Errors** (`ILogger` + try-catch in `TaskItemController.cs`)
-10. *(Next)* **Global Exception Middleware** (handle all exceptions in one place)
+7. **Handle Errors** (`ILogger` + try-catch in `TaskItemController.cs`)
+8. **Add Middleware** (`CustomMiddleware.cs`, `TestMiddleware.cs` — inline / class-based / `IMiddleware`)
+9. **Swap Implementations** (`FakeService` vs `TaskService` via DI)
+10. **Understand Lifetimes** (`TransientService`, `ScopedService`, `SingletonService`)
+11. *(Next)* **Global Exception Middleware** (catch all unhandled exceptions in one place)

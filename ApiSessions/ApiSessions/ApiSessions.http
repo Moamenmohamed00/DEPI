@@ -1,0 +1,6 @@
+@ApiSessions_HostAddress = http://localhost:5180
+
+GET {{ApiSessions_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
